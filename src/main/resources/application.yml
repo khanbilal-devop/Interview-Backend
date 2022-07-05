@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: interview-service
+    version: 1.0.6
+  datasource:
+    url: jdbc:mysql://localhost:3306/interview?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    username: root
+    password: OpenSpace
+  jpa:
+    generate-ddl: true
+    hibernate.ddl-auto: update
+    show-sql: true
+    database: default
+    properties:
+      hibernate:
+        format_sql: true
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        dialect: org.hibernate.dialect.MySQL8Dialect
+jwt:
+  secret: "interview"
+  token:
+      validity:
+             days: 1
+
+logging:
+  level:
+    root: WARN
+    org.springframework.web: ERROR
+    com.interview: INFO
